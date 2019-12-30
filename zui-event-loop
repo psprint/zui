@@ -410,7 +410,7 @@ else # No hyperlinks, and text_mode is off|hyp
     (( ${+functions[-zui-standard-text-select-callback]} )) && -zui-standard-text-select-callback "line" "$ZUILIST_WRAPPER_LINE"
     if [[ -z "$ZUILIST_WRAPPER_LINE" || "${ZUI[select_mode]}" = "quit" ]]; then
         REPLY="$ZUILIST_WRAPPER_LINE"
-        zle && { zle .redisplay; zle .reset-prompt; }
+        zle && { zle -R; zle .reset-prompt; }
         return 0
     fi
     zuiel_line_set=1
